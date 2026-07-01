@@ -961,3 +961,11 @@ window.nextPage = nextPage;
 window.prevPage = prevPage;
 window.goToPage = goToPage;
 window.handleContactSubmit = handleContactSubmit;
+// ============================================
+// WHATSAPP CLICK TRACKING
+// ============================================
+document.querySelectorAll('.whatsapp-btn, .whatsapp-btn-small').forEach(btn => {
+    btn.addEventListener('click', function() {
+        console.log('%c WhatsApp clicked! ', 'background: #25D366; color: #fff; padding: 4px 12px; border-radius: 4px;');
+    });
+});

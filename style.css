@@ -1602,4 +1602,93 @@ body {
 .mt-3 { margin-top: 15px; }
 .mb-1 { margin-bottom: 5px; }
 .mb-2 { margin-bottom: 10px; }
-.mb-3 { margin-bottom: 15px; }
+.mb-3 { margin-bottom: 15px; }  
+/* ============================================
+   WHATSAPP BUTTON STYLES
+   ============================================ */
+
+.whatsapp-section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+    background: linear-gradient(135deg, #22c55e, #0d9488);
+}
+
+.whatsapp-btn:active {
+    transform: translateY(0);
+}
+
+.whatsapp-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Back Cover WhatsApp */
+.back-whatsapp {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.whatsapp-btn-small {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(37, 211, 102, 0.15);
+    color: #25D366;
+    border: 1px solid rgba(37, 211, 102, 0.4);
+    border-radius: 25px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.whatsapp-btn-small:hover {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn-small svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
