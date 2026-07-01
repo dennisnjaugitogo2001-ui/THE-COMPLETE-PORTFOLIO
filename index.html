@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        ============================================
+        GITOGO JR - 3D INTERACTIVE DIGITAL BOOK PORTFOLIO
+        ============================================
+        A premium 3D book portfolio built with pure HTML5, CSS3, and Vanilla JavaScript.
+        No frameworks. No libraries. Pure craftsmanship.
+        
+        Author: Gitogo Jr
+        Role: Front-End Developer | Creative Designer | Problem Solver
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gitogo Jr - 3D Interactive Digital Book Portfolio. Front-End Developer, Python Learner, Paramedic, Professional Driver, and Creative Designer.">
+    <meta name="keywords" content="Gitogo Jr, Portfolio, Web Developer, Front-End, Python, Paramedic, Driver, UI/UX, Digital Book">
+    <meta name="author" content="Gitogo Jr">
+    
+    <title>Gitogo Jr | 3D Interactive Digital Book Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 
+        ============================================
+        MAIN BOOK CONTAINER
+        ============================================
+        The 3D book lives inside this container.
+        All pages, covers, spine, and effects are children of this structure.
+    -->
+    
+    <!-- Ambient lighting overlay for atmosphere -->
+    <div class="ambient-light"></div>
+    
+    <!-- Main book wrapper - centers the book on screen -->
+    <div class="book-wrapper">
+        
+        <!-- 3D Book Container - holds the entire book with perspective -->
+        <div class="book-container" id="bookContainer">
+            
+            <!-- ==================== SPINE ==================== -->
+            <!-- The spine connects front and back covers -->
+            <div class="book-spine">
+                <div class="spine-title">GITOGO JR</div>
+                <div class="spine-subtitle">PORTFOLIO</div>
+                <div class="spine-decoration"></div>
+            </div>
+            
+            <!-- ==================== BACK COVER ==================== -->
+            <!-- The back cover sits behind all pages -->
+            <div class="book-cover back-cover">
+                <div class="cover-inner">
+                    <div class="back-cover-content">
+                        <div class="back-cover-logo">GJ</div>
+                        <div class="back-cover-tagline">Building Digital Experiences</div>
+                        <div class="back-cover-year">2025</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ==================== PAGES CONTAINER ==================== -->
+            <!-- All pages are stacked here. Pages flip individually. -->
+            <div class="pages-container" id="pagesContainer">
+                
+                <!-- ===== PAGE 1: FRONT COVER ===== -->
+                <div class="page page-cover front-cover" data-page="0">
+                    <div class="page-content">
+                        <div class="cover-ornament top-ornament"></div>
+                        <div class="cover-title">
+                            <span class="cover-name">GITOGO JR</span>
+                            <span class="cover-divider"></span>
+                            <span class="cover-subtitle">Interactive Portfolio</span>
+                        </div>
+                        <div class="cover-badge">
+                            <span class="badge-icon">✦</span>
+                            <span class="badge-text">Digital Book Edition</span>
+                        </div>
+                        <div class="cover-ornament bottom-ornament"></div>
+                        <div class="cover-hint">Click to Open</div>
+                    </div>
+                </div>
+                
+                <!-- ===== PAGE 2: WELCOME ===== -->
+                <div class="page page-welcome" data-page="1">
+                    <div class="page-content">
+                        <div class="page-header">
+                            <span class="page-number">01</span>
+                            <h2 class="page-title">Welcome</h2>
+                        </div>
+                        <div class="welcome-body">
+                            <div class="welcome-greeting">Hello, I'm</div>
+                            <h1 class="welcome-name">Gitogo Jr</h1>
+                            <div class="welcome-roles">
+                                <span class="role-tag">Front-End Developer</span>
+                                <span class="role-tag">Python Learner</span>
+                                <span class="role-tag">Creative Designer</span>
+                                <span class="role-tag">Paramedic</span>
+                                <span class="role-tag">Professional Driver</span>
+                                <span class="role-tag">Aviation Enthusiast</span>
+                            </div>
+                            <p class="welcome-text">
+                                Welcome to my interactive digital portfolio. I am a passionate problem solver 
+                                who thrives on building modern digital experiences. With a diverse background 
+                                spanning web development, emergency healthcare, and creative design, I bring 
+                                a unique perspective to every project I undertake.
+                            </p>
+                            <div class="welcome-cta">
+                                <button class="btn-primary" onclick="nextPage()">Begin Journey →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== PAGE 3: ABOUT ME ===== -->
+                <div class="page page-about" data-page="2">
+                    <div class="page-content">
+                        <div class="page-header">
+                            <span class="page-number">02</span>
+                            <h2 class="page-title">About Me</h2>
+                        </div>
+                        <div class="about-body">
+                            <div class="about-portrait">
+                                <div class="portrait-frame">
+                                    <div class="portrait-placeholder">
+                                        <span class="portrait-initials">GJ</span><img src="" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about-text">
+                                <h3 class="about-heading">The Story Behind the Code</h3>
+                                <p>
+                                    I am a <strong>Front-End Web Developer</strong> with a deep passion for creating 
+                                    beautiful, functional, and user-centered digital experiences. My journey into 
+                                    technology began with curiosity and has evolved into a relentless pursuit of excellence.
+                                </p>
+                                <p>
+                                    Currently expanding my horizons as an <strong>aspiring Back-End Developer</strong> 
+                                    and <strong>Python student</strong>, I am committed to becoming a well-rounded 
+                                    full-stack professional. My love for clean code and elegant design drives 
+                                    everything I build.
+                                </p>
+                                <p>
+                                    Beyond the screen, I am a <strong>Professional Driver</strong> with over 3 years 
+                                    of experience on platforms like <em>Uber</em> and <em>Bolt</em>, a 
+                                    <strong>Paramedic</strong> trained in Accident & Emergency Care, and an 
+                                    <strong>Aviation Enthusiast</strong> who dreams of the skies.
+                                </p>
+                                <p>
+                                    As a <strong>Copywriter</strong> and <strong>Creative Designer</strong>, I blend 
+                                    storytelling with visual artistry. I am always eager to learn new technologies 
+                                    and push the boundaries of what's possible on the web.
+                                </p>
+                                <div class="about-quote">
+                                    <blockquote>"Technology is best when it brings people together."</blockquote>
+                                    <cite>— Matt Mullenweg</cite>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== PAGE 4: SKILLS ===== -->
+                <div class="page page-skills" data-page="3">
+                    <div class="page-content">
+                        <div class="page-header">
+                            <span class="page-number">03</span>
+                            <h2 class="page-title">Skills</h2>
+                        </div>
+                        <div class="skills-body">
+                            <!-- Technical Skills Section -->
+                            <div class="skills-section">
+                                <h3 class="skills-category">Technical Skills</h3>
+                                <div class="skill-items">
+                                    
+                                    <div class="skill-item">
+                                        <div class="skill-info">
+                                            <span class="skill-name">HTML5</span>
+                                            <span class="skill-percent">95%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="95"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-item">
+                                        <div class="skill-info">
+                                            <span class="skill-name">CSS3</span>
+                                            <span class="skill-percent">92%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="92"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-item">
+                                        <div class="skill-info">
+                                            <span class="skill-name">JavaScript</span>
+                                            <span class="skill-percent">85%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="85"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-item">
+                                        <div class="skill-info">
+                                            <span class="skill-name">Responsive Design</span>
+                                            <span class="skill-percent">90%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="90"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-item">
+                                        <div class="skill-info">
+                                            <span class="skill-name">UI/UX Design</span>
+                                            <span class="skill-percent">88%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="88"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-item">
+                                        <div class="skill-info">
+                                            <span class="skill-name">Python</span>
+                                            <span class="skill-percent">70%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="70"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-item">
+                                        <div class="skill-info">
+                                            <span class="skill-name">Git</span>
+                                            <span class="skill-percent">80%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="80"></div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <!-- Professional Skills Section -->
+                            <div class="skills-section">
+                                <h3 class="skills-category">Professional Skills</h3>
+                                <div class="skill-cards">
+                                    
+                                    <div class="skill-card">
+                                        <div class="skill-card-icon">📝</div>
+                                        <div class="skill-card-name">Copywriting</div>
+                                        <div class="skill-card-desc">Compelling content creation</div>
+                                    </div>
+                                    
+                                    <div class="skill-card">
+                                        <div class="skill-card-icon">📊</div>
+                                        <div class="skill-card-name">Microsoft Office</div>
+                                        <div class="skill-card-desc">Document & data mastery</div>
+                                    </div>
+                                    
+                                    <div class="skill-card">
+                                        <div class="skill-card-icon">🧩</div>
+                                        <div class="skill-card-name">Problem Solving</div>
+                                        <div class="skill-card-desc">Analytical thinking</div>
+                                    </div>
+                                    
+                                    <div class="skill-card">
+                                        <div class="skill-card-icon">💬</div>
+                                        <div class="skill-card-name">Communication</div>
+                                        <div class="skill-card-desc">Clear & effective dialogue</div>
+                                    </div>
+                                    
+                                    <div class="skill-card">
+                                        <div class="skill-card-icon">🤝</div>
+                                        <div class="skill-card-name">Customer Service</div>
+                                        <div class="skill-card-desc">Client satisfaction focus</div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== PAGE 5: EXPERIENCE ===== -->
+                <div class="page page-experience" data-page="4">
+                    <div class="page-content">
+                        <div class="page-header">
+                            <span class="page-number">04</span>
+                            <h2 class="page-title">Experience</h2>
+                        </div>
+                        <div class="experience-body">
+                            
+                            <div class="timeline">
+                                
+                                <!-- Experience Item 1 -->
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-line"></div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="experience-card">
+                                            <div class="experience-icon">🚗</div>
+                                            <div class="experience-details">
+                                                <h4 class="experience-title">Professional Driver</h4>
+                                                <p class="experience-company">Uber, Bolt & Ride-Hailing Platforms</p>
+                                                <p class="experience-duration">2022 — Present</p>
+                                                <p class="experience-desc">
+                                                    Over 3 years of professional driving experience across multiple 
+                                                    ride-hailing platforms. Delivered safe, reliable transportation 
+                                                    with exceptional customer ratings. Developed strong navigation, 
+                                                    time management, and interpersonal skills.
+                                                </p>
+                                                <div class="experience-tags">
+                                                    <span>Customer Service</span>
+                                                    <span>Navigation</span>
+                                                    <span>Time Management</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Experience Item 2 -->
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-line"></div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="experience-card">
+                                            <div class="experience-icon">🚑</div>
+                                            <div class="experience-details">
+                                                <h4 class="experience-title">Paramedic</h4>
+                                                <p class="experience-company">Accident & Emergency Care</p>
+                                                <p class="experience-duration">2021 — Present</p>
+                                                <p class="experience-desc">
+                                                    Trained and experienced in Accident & Emergency care. Skilled in 
+                                                    rapid assessment, first aid, emergency response protocols, and 
+                                                    patient stabilization under high-pressure situations.
+                                                </p>
+                                                <div class="experience-tags">
+                                                    <span>Emergency Response</span>
+                                                    <span>First Aid</span>
+                                                    <span>Critical Thinking</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Experience Item 3 -->
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-line"></div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="experience-card">
+                                            <div class="experience-icon">🎨</div>
+                                            <div class="experience-details">
+                                                <h4 class="experience-title">Freelance Designer</h4>
+                                                <p class="experience-company">Self-Employed</p>
+                                                <p class="experience-duration">2020 — Present</p>
+                                                <p class="experience-desc">
+                                                    Providing creative design solutions including branding, UI/UX 
+                                                    design, and digital artwork. Collaborated with clients to bring 
+                                                    their visions to life through thoughtful design.
+                                                </p>
+                                                <div class="experience-tags">
+                                                    <span>Branding</span>
+                                                    <span>UI/UX</span>
+                                                    <span>Digital Art</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Experience Item 4 -->
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">
+                                        <div class="timeline-dot"></div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="experience-card">
+                                            <div class="experience-icon">💻</div>
+                                            <div class="experience-details">
+                                                <h4 class="experience-title">Front-End Developer</h4>
+                                                <p class="experience-company">Freelance & Personal Projects</p>
+                                                <p class="experience-duration">2019 — Present</p>
+                                                <p class="experience-desc">
+                                                    Building responsive, interactive websites and web applications. 
+                                                    Specializing in modern HTML5, CSS3, and Vanilla JavaScript. 
+                                                    Passionate about clean code and exceptional user experiences.
+                                                </p>
+                                                <div class="experience-tags">
+                                                    <span>HTML5/CSS3/JS</span>
+                                                    <span>Responsive Design</span>
+                                                    <span>Web Apps</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== PAGE 6: PROJECTS ===== -->
+                <div class="page page-projects" data-page="5">
+                    <div class="page-content">
+                        <div class="page-header">
+                            <span class="page-number">05</span>
+                            <h2 class="page-title">Projects</h2>
+                        </div>
+                        <div class="projects-body">
+                            
+                            <div class="projects-grid">
+                                
+                                <!-- Project 1 -->
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <div class="project-img-placeholder">
+                                            <span class="project-img-icon">🌐</span>
+                                            <span class="project-img-label">Personal Portfolio</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 class="project-name">Personal Portfolio Website</h4>
+                                        <p class="project-desc">
+                                            A fully responsive personal portfolio showcasing skills, projects, 
+                                            and experience with modern animations and clean design.
+                                        </p>
+                                        <div class="project-tech">
+                                            <span>HTML5</span>
+                                            <span>CSS3</span>
+                                            <span>JavaScript</span>
+                                        </div>
+                                        <div class="project-actions">
+                                            <button class="btn-project">View Project</button>
+                                            <button class="btn-project btn-outline">Source Code</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Project 2 -->
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <div class="project-img-placeholder">
+                                            <span class="project-img-icon">🏢</span>
+                                            <span class="project-img-label">Business Website</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 class="project-name">Business Website</h4>
+                                        <p class="project-desc">
+                                            Professional business website with modern layout, contact forms, 
+                                            service sections, and mobile-first responsive design.
+                                        </p>
+                                        <div class="project-tech">
+                                            <span>HTML5</span>
+                                            <span>CSS3</span>
+                                            <span>Responsive</span>
+                                        </div>
+                                        <div class="project-actions">
+                                            <button class="btn-project">View Project</button>
+                                            <button class="btn-project btn-outline">Source Code</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Project 3 -->
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <div class="project-img-placeholder">
+                                            <span class="project-img-icon">🚀</span>
+                                            <span class="project-img-label">Landing Page</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 class="project-name">Product Landing Page</h4>
+                                        <p class="project-desc">
+                                            High-converting landing page with scroll animations, call-to-action 
+                                            optimization, and performance-focused code structure.
+                                        </p>
+                                        <div class="project-tech">
+                                            <span>HTML5</span>
+                                            <span>CSS3</span>
+                                            <span>Animations</span>
+                                        </div>
+                                        <div class="project-actions">
+                                            <button class="btn-project">View Project</button>
+                                            <button class="btn-project btn-outline">Source Code</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Project 4 -->
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <div class="project-img-placeholder">
+                                            <span class="project-img-icon">🎨</span>
+                                            <span class="project-img-label">UI Design</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 class="project-name">UI Design System</h4>
+                                        <p class="project-desc">
+                                            Comprehensive UI design system with components, color palettes, 
+                                            typography scales, and reusable design patterns.
+                                        </p>
+                                        <div class="project-tech">
+                                            <span>UI/UX</span>
+                                            <span>Design System</span>
+                                            <span>Prototyping</span>
+                                        </div>
+                                        <div class="project-actions">
+                                            <button class="btn-project">View Project</button>
+                                            <button class="btn-project btn-outline">Source Code</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Project 5 -->
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <div class="project-img-placeholder">
+                                            <span class="project-img-icon">📖</span>
+                                            <span class="project-img-label">Digital Book</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 class="project-name">Digital Book Portfolio</h4>
+                                        <p class="project-desc">
+                                            This very project — a 3D interactive digital book built with pure 
+                                            HTML, CSS, and JavaScript. No frameworks, no libraries.
+                                        </p>
+                                        <div class="project-tech">
+                                            <span>HTML5</span>
+                                            <span>CSS3 3D</span>
+                                            <span>Vanilla JS</span>
+                                        </div>
+                                        <div class="project-actions">
+                                            <button class="btn-project">View Project</button>
+                                            <button class="btn-project btn-outline">Source Code</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Project 6 -->
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <div class="project-img-placeholder">
+                                            <span class="project-img-icon">⚡</span>
+                                            <span class="project-img-label">JS Projects</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 class="project-name">JavaScript Projects Collection</h4>
+                                        <p class="project-desc">
+                                            A collection of interactive JavaScript projects including calculators, 
+                                            to-do apps, weather widgets, and dynamic form validations.
+                                        </p>
+                                        <div class="project-tech">
+                                            <span>JavaScript</span>
+                                            <span>DOM</span>
+                                            <span>APIs</span>
+                                        </div>
+                                        <div class="project-actions">
+                                            <button class="btn-project">View Project</button>
+                                            <button class="btn-project btn-outline">Source Code</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== PAGE 7: SERVICES ===== -->
+                <div class="page page-services" data-page="6">
+                    <div class="page-content">
+                        <div class="page-header">
+                            <span class="page-number">06</span>
+                            <h2 class="page-title">Services</h2>
+                        </div>
+                        <div class="services-body">
+                            
+                            <div class="services-grid">
+                                
+                                <!-- Service 1 -->
+                                <div class="service-card">
+                                    <div class="service-icon-wrapper">
+                                        <div class="service-icon">💻</div>
+                                    </div>
+                                    <h4 class="service-name">Front-End Web Development</h4>
+                                    <p class="service-desc">
+                                        Building modern, responsive websites using HTML5, CSS3, and JavaScript. 
+                                        Clean code, semantic markup, and cross-browser compatibility guaranteed.
+                                    </p>
+                                    <ul class="service-features">
+                                        <li>Responsive Layouts</li>
+                                        <li>Interactive Animations</li>
+                                        <li>Performance Optimized</li>
+                                        <li>SEO-Friendly Structure</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Service 2 -->
+                                <div class="service-card">
+                                    <div class="service-icon-wrapper">
+                                        <div class="service-icon">🎨</div>
+                                    </div>
+                                    <h4 class="service-name">Website Design</h4>
+                                    <p class="service-desc">
+                                        Creating visually stunning website designs that capture your brand identity 
+                                        and engage your audience with modern aesthetics.
+                                    </p>
+                                    <ul class="service-features">
+                                        <li>Custom UI Design</li>
+                                        <li>Brand Identity Integration</li>
+                                        <li>Visual Hierarchy</li>
+                                        <li>Color Theory Application</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Service 3 -->
+                                <div class="service-card">
+                                    <div class="service-icon-wrapper">
+                                        <div class="service-icon">📱</div>
+                                    </div>
+                                    <h4 class="service-name">Responsive Websites</h4>
+                                    <p class="service-desc">
+                                        Ensuring your website looks perfect on every device — from large desktop 
+                                        monitors to tablets and mobile phones with fluid layouts.
+                                    </p>
+                                    <ul class="service-features">
+                                        <li>Mobile-First Approach</li>
+                                        <li>Fluid Grid Systems</li>
+                                        <li>Touch-Friendly Interfaces</li>
+                                        <li>Cross-Device Testing</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Service 4 -->
+                                <div class="service-card">
+                                    <div class="service-icon-wrapper">
+                                        <div class="service-icon">✨</div>
+                                    </div>
+                                    <h4 class="service-name">UI/UX Design</h4>
+                                    <p class="service-desc">
+                                        Designing intuitive user interfaces and seamless user experiences that 
+                                        delight users and drive conversions.
+                                    </p>
+                                    <ul class="service-features">
+                                        <li>User Research</li>
+                                        <li>Wireframing & Prototyping</li>
+                                        <li>Usability Testing</li>
+                                        <li>Accessibility Compliance</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Service 5 -->
+                                <div class="service-card">
+                                    <div class="service-icon-wrapper">
+                                        <div class="service-icon">📝</div>
+                                    </div>
+                                    <h4 class="service-name">Copywriting</h4>
+                                    <p class="service-desc">
+                                        Crafting compelling copy that tells your story, engages your audience, 
+                                        and drives action through persuasive and clear messaging.
+                                    </p>
+                                    <ul class="service-features">
+                                        <li>Website Copy</li>
+                                        <li>Brand Messaging</li>
+                                        <li>SEO Content</li>
+                                        <li>Call-to-Action Writing</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Service 6 -->
+                                <div class="service-card">
+                                    <div class="service-icon-wrapper">
+                                        <div class="service-icon">📖</div>
+                                    </div>
+                                    <h4 class="service-name">Portfolio Development</h4>
+                                    <p class="service-desc">
+                                        Creating stunning portfolio websites that showcase your work, skills, 
+                                        and personality in the most impressive way possible.
+                                    </p>
+                                    <ul class="service-features">
+                                        <li>Custom Portfolio Design</li>
+                                        <li>Project Showcases</li>
+                                        <li>Interactive Elements</li>
+                                        <li>Personal Branding</li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== PAGE 8: CERTIFICATES ===== -->
+                <div class="page page-certificates" data-page="7">
+                    <div class="page-content">
+                        <div class="page-header">
+                            <span class="page-number">07</span>
+                            <h2 class="page-title">Certificates</h2>
+                        </div>
+                        <div class="certificates-body">
+                            
+                            <div class="certificates-grid">
+                                
+                                <!-- Certificate 1 -->
+                                <div class="certificate-card">
+                                    <div class="certificate-ribbon">
+                                        <span class="ribbon-text">CERTIFIED</span>
+                                    </div>
+                                    <div class="certificate-frame">
+                                        <div class="certificate-placeholder">
+                                            <span class="certificate-icon">🏆</span>
+                                        </div>
+                                    </div>
+                                    <div class="certificate-info">
+                                        <h4 class="certificate-name">Front-End Web Development</h4>
+                                        <p class="certificate-institution">Online Learning Platform</p>
+                                        <p class="certificate-year">2024</p>
+                                        <button class="btn-certificate">View Certificate</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Certificate 2 -->
+                                <div class="certificate-card">
+                                    <div class="certificate-ribbon">
+                                        <span class="ribbon-text">CERTIFIED</span>
+                                    </div>
+                                    <div class="certificate-frame">
+                                        <div class="certificate-placeholder">
+                                            <span class="certificate-icon">🏆</span>
+                                        </div>
+                                    </div>
+                                    <div class="certificate-info">
+                                        <h4 class="certificate-name">Responsive Web Design</h4>
+                                        <p class="certificate-institution">FreeCodeCamp</p>
+                                        <p class="certificate-year">2024</p>
+                                        <button class="btn-certificate">View Certificate</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Certificate 3 -->
+                                <div class="certificate-card">
+                                    <div class="certificate-ribbon">
+                                        <span class="ribbon-text">CERTIFIED</span>
+                                    </div>
+                                    <div class="certificate-frame">
+                                        <div class="certificate-placeholder">
+                                            <span class="certificate-icon">🏆</span>
+                                        </div>
+                                    </div>
+                                    <div class="certificate-info">
+                                        <h4 class="certificate-name">JavaScript Algorithms & Data Structures</h4>
+                                        <p class="certificate-institution">FreeCodeCamp</p>
+                                        <p class="certificate-year">2025</p>
+                                        <button class="btn-certificate">View Certificate</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Certificate 4 -->
+                                <div class="certificate-card">
+                                    <div class="certificate-ribbon">
+                                        <span class="ribbon-text">CERTIFIED</span>
+                                    </div>
+                                    <div class="certificate-frame">
+                                        <div class="certificate-placeholder">
+                                            <span class="certificate-icon">🏆</span>
+                                        </div>
+                                    </div>
+                                    <div class="certificate-info">
+                                        <h4 class="certificate-name">Python Programming Fundamentals</h4>
+                                        <p class="certificate-institution">Online Academy</p>
+                                        <p class="certificate-year">2025</p>
+                                        <button class="btn-certificate">View Certificate</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Certificate 5 -->
+                                <div class="certificate-card">
+                                    <div class="certificate-ribbon">
+                                        <span class="ribbon-text">CERTIFIED</span>
+                                    </div>
+                                    <div class="certificate-frame">
+                                        <div class="certificate-placeholder">
+                                            <span class="certificate-icon">🏆</span>
+                                        </div>
+                                    </div>
+                                    <div class="certificate-info">
+                                        <h4 class="certificate-name">UI/UX Design Principles</h4>
+                                        <p class="certificate-institution">Design Institute</p>
+                                        <p class="certificate-year">2024</p>
+                                        <button class="btn-certificate">View Certificate</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Certificate 6 -->
+                                <div class="certificate-card">
+                                    <div class="certificate-ribbon">
+                                        <span class="ribbon-text">CERTIFIED</span>
+                                    </div>
+                                    <div class="certificate-frame">
+                                        <div class="certificate-placeholder">
+                                            <span class="certificate-icon">🏆</span>
+                                        </div>
+                                    </div>
+                                    <div class="certificate-info">
+                                        <h4 class="certificate-name">Accident & Emergency Care</h4>
+                                        <p class="certificate-institution">Medical Training Center</p>
+                                        <p class="certificate-year">2023</p>
+                                        <button class="btn-certificate">View Certificate</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== PAGE 9: GALLERY ===== -->
+                <div class="page page-gallery" data-page="8">
+                    <div class="page-content">
+                        <div class="page-header">
+                            <span class="page-number">08</span>
+                            <h2 class="page-title">Gallery</h2>
+                        </div>
+                        <div class="gallery-body">
+                            
+                            <div class="gallery-grid">
+                                
+                                <div class="gallery-item">
+                                    <div class="gallery-image">
+                                        <div class="gallery-placeholder">
+                                            <span class="gallery-icon">🖼️</span>
+                                            <span class="gallery-label">Project Screenshot 1</span>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-view">🔍 View</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item">
+                                    <div class="gallery-image">
+                                        <div class="gallery-placeholder">
+                                            <span class="gallery-icon">🖼️</span>
+                                            <span class="gallery-label">Project Screenshot 2</span>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-view">🔍 View</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item">
+                                    <div class="gallery-image">
+                                        <div class="gallery-placeholder">
+                                            <span class="gallery-icon">🖼️</span>
+                                            <span class="gallery-label">Design Work 1</span>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-view">🔍 View</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item">
+                                    <div class="gallery-image">
+                                        <div class="gallery-placeholder">
+                                            <span class="gallery-icon">🖼️</span>
+                                            <span class="gallery-label">Design Work 2</span>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-view">🔍 View</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item">
+                                    <div class="gallery-image">
+                                        <div class="gallery-placeholder">
+                                            <span class="gallery-icon">🖼️</span>
+                                            <span class="gallery-label">Code Preview</span>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-view">🔍 View</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item">
+                                    <div class="gallery-image">
+                                        <div class="gallery-placeholder">
+                                            <span class="gallery-icon">🖼️</span>
+                                            <span class="gallery-label">Creative Work</span>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-view">🔍 View</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item">
+                                    <div class="gallery-image">
+                                        <div class="gallery-placeholder">
+                                            <span class="gallery-icon">🖼️</span>
+                                            <span class="gallery-label">Aviation Passion</span>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-view">🔍 View</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item">
+                                    <div class="gallery-image">
+                                        <div class="gallery-placeholder">
+                                            <span class="gallery-icon">🖼️</span>
+                                            <span class="gallery-label">Behind the Scenes</span>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-view">🔍 View</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== PAGE 10: CONTACT ===== -->
+                <div class="page page-contact" data-page="9">
+                    <div class="page-content">
+                        <div class="page-header">
+                            <span class="page-number">09</span>
+                            <h2 class="page-title">Contact</h2>
+                        </div>
+                        <div class="contact-body">
+                            
+                            <div class="contact-layout">
+                                
+                                <!-- Contact Info -->
+                                <div class="contact-info-section">
+                                    <h3 class="contact-subtitle">Let's Connect</h3>
+                                    <p class="contact-text">
+                                        Have a project in mind or want to collaborate? 
+                                        I'd love to hear from you. Reach out and let's create something amazing together.
+                                    </p>
+                                    
+                                    <div class="contact-details">
+                                        <div class="contact-item">
+                                            <span class="contact-icon">📧</span>
+                                            <div class="contact-detail">
+                                                <span class="contact-label">Email</span>
+                                                <span class="contact-value">gitogojr@email.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-item">
+                                            <span class="contact-icon">📱</span>
+                                            <div class="contact-detail">
+                                                <span class="contact-label">Phone</span>
+                                                <span class="contact-value">+1 (555) 123-4567</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-item">
+                                            <span class="contact-icon">📍</span>
+                                            <div class="contact-detail">
+                                                <span class="contact-label">Location</span>
+                                                <span class="contact-value">Available Worldwide</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Social Media Buttons -->
+                                    <div class="social-links">
+                                        <h4 class="social-title">Follow Me</h4>
+                                        <div class="social-buttons">
+                                            <a href="#" class="social-btn social-github" title="GitHub">
+                                                <span class="social-icon">⚡</span>
+                                                <span>GitHub</span>
+                                            </a>
+                                            <a href="#" class="social-btn social-linkedin" title="LinkedIn">
+                                                <span class="social-icon">💼</span>
+                                                <span>LinkedIn</span>
+                                            </a>
+                                            <a href="#" class="social-btn social-twitter" title="Twitter">
+                                                <span class="social-icon">🐦</span>
+                                                <span>Twitter</span>
+                                            </a>
+                                            <a href="#" class="social-btn social-instagram" title="Instagram">
+                                                <span class="social-icon">📷</span>
+                                                <span>Instagram</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Contact Form -->
+                                <div class="contact-form-section">
+                                    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                                        <div class="form-group">
+                                            <label for="contactName">Name</label>
+                                            <input type="text" id="contactName" name="name" placeholder="Your Name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contactEmail">Email</label>
+                                            <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contactPhone">Phone</label>
+                                            <input type="tel" id="contactPhone" name="phone" placeholder="+1 (555) 000-0000">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contactMessage">Message</label>
+                                            <textarea id="contactMessage" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn-submit">
+                                            <span>Send Message</span>
+                                            <span class="btn-arrow">→</span>
+                                        </button>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== PAGE 11: BACK COVER ===== -->
+                <div class="page page-back-cover" data-page="10">
+                    <div class="page-content">
+                        <div class="back-cover-page">
+                            <div class="back-cover-ornament"></div>
+                            <div class="back-cover-thankyou">Thank You</div>
+                            <div class="back-cover-message">
+                                for exploring my digital portfolio
+                            </div>
+                            <div class="back-cover-divider"></div>
+                            <div class="back-cover-quote">
+                                "The only way to do great work is to love what you do."
+                            </div>
+                            <div class="back-cover-author">— Steve Jobs</div>
+                            <div class="back-cover-closing">
+                                <div class="closing-name">Gitogo Jr</div>
+                                <div class="closing-title">Front-End Developer & Creative Designer</div>
+                            </div>
+                            <div class="back-cover-year-end">2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div><!-- End pages-container -->
+            
+            <!-- ==================== FRONT COVER (OUTER) ==================== -->
+            <!-- The front cover sits on top and opens first -->
+            <div class="book-cover front-cover-outer">
+                <div class="cover-inner">
+                    <div class="cover-ornament top-ornament"></div>
+                    <div class="cover-title">
+                        <span class="cover-name">GITOGO JR</span>
+                        <span class="cover-divider"></span>
+                        <span class="cover-subtitle">Interactive Portfolio</span>
+                    </div>
+                    <div class="cover-badge">
+                        <span class="badge-icon">✦</span>
+                        <span class="badge-text">Digital Book Edition</span>
+                    </div>
+                    <div class="cover-ornament bottom-ornament"></div>
+                    <div class="cover-hint">Click to Open</div>
+                </div>
+            </div>
+            
+        </div><!-- End book-container -->
+        
+    </div><!-- End book-wrapper -->
+    
+    <!-- ==================== NAVIGATION CONTROLS ==================== -->
+    <!-- Fixed navigation bar at the bottom of the screen -->
+    <nav class="book-navigation" id="bookNavigation">
+        <div class="nav-inner">
+            <button class="nav-btn nav-prev" id="prevBtn" onclick="prevPage()" aria-label="Previous Page">
+                <span class="nav-icon">←</span>
+                <span class="nav-label">Previous</span>
+            </button>
+            
+            <div class="nav-center">
+                <span class="page-indicator">
+                    <span class="current-page" id="currentPage">0</span>
+                    <span class="page-separator">/</span>
+                    <span class="total-pages" id="totalPages">10</span>
+                </span>
+                <div class="page-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+            
+            <button class="nav-btn nav-next" id="nextBtn" onclick="nextPage()" aria-label="Next Page">
+                <span class="nav-label">Next</span>
+                <span class="nav-icon">→</span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- ==================== KEYBOARD HINT ==================== -->
+    <div class="keyboard-hint" id="keyboardHint">
+        <span>Use ← → arrow keys or swipe to navigate</span>
+    </div>
+    
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script src="script.js"></script>
+    
+</body>
+</html>
